@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 //import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
+import java.util.*;
 
 @Controller
 @SpringBootApplication
@@ -26,11 +27,11 @@ public class DemoApplication {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization","Bearer ba346baabcd44c11a8d9d34ad00998eb");
-		//.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
 		HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
 
-		ResponseEntity<String> response = restTemplate.exchange(URL_API_AI, HttpMethod.POST, entity, String.class);
+		ResponseEntity<String> response = restTemplate.exchange(URL_API_AI, HttpMethod.GET, entity, String.class);
 
       return "Hello World!" + response.getBody();
     }
