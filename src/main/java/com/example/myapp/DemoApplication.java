@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class DemoApplication {
 
-	static final String URL_API_AI = "https://api.dialogflow.com/v1/query?v=20170712&query=what%20is%20the%20update%20for%20ticket%20INC33333&lang=en&sessionId=9a944b5a-4339-114a-d5d7-71c8b7db5d33&timezone=Asia/Manila";
+	static final String URL_API_AI = "https://api.dialogflow.com/v1/query?v=20170712&query=what is the update for ticket INC33333&lang=en&sessionId=9a944b5a-4339-114a-d5d7-71c8b7db5d33&timezone=Asia/Manila";
 
     @RequestMapping("/")
     @ResponseBody
